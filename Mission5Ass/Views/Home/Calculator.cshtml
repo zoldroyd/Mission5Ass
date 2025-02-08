@@ -1,6 +1,32 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Calculator";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<h2>Calculator</h2>
+
+<form id="calculatorForm">
+    <div class="form-group">
+        <label for="hours">Number of Hours Needed:</label>
+        <input type="number" class="form-control" id="hours" name="hours" min="1" required>
+        <small class="text-danger" id="hoursError" style="display:none;">Please enter a positive number.</small>
+    </div>
+
+    <div class="form-group">
+        <label for="chargePerHour">Charge Per Hour:</label>
+        <input type="text" class="form-control" id="chargePerHour" value="$499" readonly>
+    </div>
+
+    <button type="button" class="btn btn-primary" id="calculateButton">Calculate Total</button>
+
+    <div class="form-group">
+        <label for="total">Total:</label>
+        <input type="text" class="form-control" id="total" readonly>
+    </div>
+</form>
+
+@section Scripts {
+    <script src="~/js/Calculator.js"></script>
+}
+
+
+
